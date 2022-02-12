@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIA Archiver", "Test\CIA Archiver.csproj", "{632A2562-25C2-4B57-8949-E7525EE3CA99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compress Image Archiver", "Compress Image Archiver\Compress Image Archiver.csproj", "{6297CD0C-79F3-43CF-9D98-406541663E64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIA Viewer", "CIA Viewer\CIA Viewer.csproj", "{E78437BE-396A-4D4C-AFB1-A0BF3EE8F2C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{632A2562-25C2-4B57-8949-E7525EE3CA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632A2562-25C2-4B57-8949-E7525EE3CA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632A2562-25C2-4B57-8949-E7525EE3CA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632A2562-25C2-4B57-8949-E7525EE3CA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6297CD0C-79F3-43CF-9D98-406541663E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6297CD0C-79F3-43CF-9D98-406541663E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6297CD0C-79F3-43CF-9D98-406541663E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6297CD0C-79F3-43CF-9D98-406541663E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E78437BE-396A-4D4C-AFB1-A0BF3EE8F2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78437BE-396A-4D4C-AFB1-A0BF3EE8F2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78437BE-396A-4D4C-AFB1-A0BF3EE8F2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78437BE-396A-4D4C-AFB1-A0BF3EE8F2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB795025-76D8-4C99-A0C8-AACDB170F0EB}
+	EndGlobalSection
+EndGlobal

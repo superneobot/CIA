@@ -66,8 +66,8 @@
             // 
             this.status.ForeColor = System.Drawing.Color.Black;
             this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(35, 17);
-            this.status.Text = "Done";
+            this.status.Size = new System.Drawing.Size(38, 17);
+            this.status.Text = "Готов";
             // 
             // label1
             // 

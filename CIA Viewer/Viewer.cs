@@ -35,19 +35,12 @@ namespace CIA_Viewer
         }
 
         private async void OpenWith(string path)
-        {          
-            Form f = new Form();
-            f.TopMost = true;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.ShowInTaskbar = false;
+        {
             PictureBox b = new PictureBox();
             b.Image = Properties.Resources.loading;
-            b.Dock = DockStyle.Fill;
-            f.Size = new Size(198, 198);
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.BackColor = LV.BackColor;
-            f.Controls.Add(b);
-            f.Show();          
+            b.Size = new Size(198, 198);
+            b.Location = new Point((this.Width / 4) + 150, this.Height / 4);
+            LV.Controls.Add(b);
             await Task.Run(() =>
             {
                 if (path.Contains(".cia"))
@@ -58,7 +51,7 @@ namespace CIA_Viewer
                         files = result as List<Files>;
                         Action a = () =>
                         {
-                            status.Text = "Готово";
+                            status.Text = "Готов";
                             Text = $"CIA Viewer - [{path}]";
                         };
                         Invoke(a);
@@ -72,29 +65,14 @@ namespace CIA_Viewer
                         files = result as List<Files>;
                         Action a = () =>
                         {
-                            status.Text = "Готово";
+                            status.Text = "Готов";
                             Text = $"CIA Viewer - [{path}]";
                         };
                         Invoke(a);
                     }
                 }
             });
-            //await Task.Run(() =>
-            //{
-            //    List<Files> result = null;
-            //    if (ReadPack(path, out result, path))
-            //    {
-                    
-            //        files = result as List<Files>;
-            //        Action a = () =>
-            //        {
-            //         //   status.Text = "Готово";
-            //            Text = $"CIA Viewer - [{path}]";
-            //        };
-            //        Invoke(a);
-            //    }
-            //});
-            f.Close();
+            b.Hide();
             LoadAndShow();
         }
 
@@ -149,22 +127,16 @@ namespace CIA_Viewer
             using (OpenFileDialog op = new OpenFileDialog())
             {
                 op.Filter = "CIA файл (*.cia)|*.cia|Файл архива CIA (*.gzip)|*.gzip|Все файлы (*.*)|*.*";
-                op.DefaultExt = "All files (*.*)|*.*";
+                //op.DefaultExt = "All files (*.*)|*.*";
                 op.Multiselect = true;
                 if (op.ShowDialog() == DialogResult.OK)
                 {
                     Clear();
-                    Form f = new Form();
-                    f.StartPosition = FormStartPosition.CenterScreen;
-                    f.TopMost = true;
                     PictureBox b = new PictureBox();
                     b.Image = Properties.Resources.loading;
-                    b.Dock = DockStyle.Fill;
-                    f.Size = new Size(198, 198);
-                    f.FormBorderStyle = FormBorderStyle.None;
-                    f.BackColor = LV.BackColor;
-                    f.Controls.Add(b);
-                    f.Show();
+                    b.Size = new Size(198, 198);
+                    b.Location = new Point((this.Width / 4)+150, this.Height / 4);
+                    LV.Controls.Add(b);
                     await Task.Run(() =>
                     {
                         if (op.FilterIndex == 2)
@@ -175,7 +147,7 @@ namespace CIA_Viewer
                                 files = result as List<Files>;
                                 Action a = () =>
                                 {
-                                    status.Text = "Готово";
+                                    status.Text = "Готов";
                                     Text = $"CIA Viewer - [{op.FileName}]";
                                 };
                                 Invoke(a);
@@ -189,7 +161,7 @@ namespace CIA_Viewer
                                 files = result as List<Files>;
                                 Action a = () =>
                                  {
-                                     status.Text = "Готово";
+                                     status.Text = "Готов";
                                      Text = $"CIA Viewer - [{op.FileName}]";
                                  };
                                 Invoke(a);
@@ -205,7 +177,7 @@ namespace CIA_Viewer
                                     files = result as List<Files>;
                                     Action a = () =>
                                     {
-                                        status.Text = "Готово";
+                                        status.Text = "Готов";
                                         Text = $"CIA Viewer - [{op.FileName}]";
                                     };
                                     Invoke(a);
@@ -219,7 +191,7 @@ namespace CIA_Viewer
                                     files = result as List<Files>;
                                     Action a = () =>
                                     {
-                                        status.Text = "Готово";
+                                        status.Text = "Готов";
                                         Text = $"CIA Viewer - [{op.FileName}]";
                                     };
                                     Invoke(a);
@@ -227,7 +199,7 @@ namespace CIA_Viewer
                             }
                         }
                     });
-                    f.Close();
+                    b.Hide();
                 }
             }                                
             if (files.Count > 0)
@@ -262,7 +234,7 @@ namespace CIA_Viewer
                     a++;
                 };
             });
-            status.Text = $"Готово";
+            status.Text = $"Готов";
         }
 
         private void clear_strip_Click(object sender, EventArgs e)
@@ -275,7 +247,7 @@ namespace CIA_Viewer
             files.Clear();
             images.Clear();
             Large.Images.Clear();
-            LV.Clear();
+            LV.Items.Clear();
             Text = "CIA Viewer";
         }
 

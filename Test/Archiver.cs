@@ -31,6 +31,7 @@ namespace Test
                 op.Filter = "JPEG file (*.jpg)|*.jpg|PNG file (*.png)|*.png|GIF file (*.gif)|*.gif";
                 if (op.ShowDialog() == DialogResult.OK)
                 {
+                    Clear();
                     int file = 1;
                     await Task.Run(() =>
                      {
@@ -83,14 +84,14 @@ namespace Test
                          Large.ImageSize = new Size(140, 160);
                          //
                          ListViewItem lvi = new ListViewItem(new string[] { $"{item.Count}", item.FilePath, item.Size });
-                         status.Text = "Loading";
+                         status.Text = "Загрузка";
                          lvi.ImageIndex = i;
                          LV.Items.Add(lvi);
                      });
                      i++;
                  }
              });
-            status.Text = "Done";
+            status.Text = "Готов";
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,14 +104,14 @@ namespace Test
                 using (SaveFileDialog sf = new SaveFileDialog())
                 {
                     sf.FileName = Path.GetFileNameWithoutExtension(files[0].FileName);
-                    sf.Filter = "Archive file (*.gzip)|*.gzip|CIA file (*.cia)|*.cia";
+                    sf.Filter = "CIA файл (*.cia)|*.cia|Файл архива CIA (*.gzip)|*.gzip";
                     if (sf.ShowDialog() == DialogResult.OK)
                     {
-                        if (sf.FilterIndex == 1)
+                        if (sf.FilterIndex == 2)
                         {
                             CreateArchive(sf.FileName, files);
                         }
-                        if (sf.FilterIndex == 2)
+                        if (sf.FilterIndex == 1)
                         {
                             CreatePack(sf.FileName, files);
                         }
@@ -127,7 +128,15 @@ namespace Test
             files.Clear();
             images.Clear();
             Large.Images.Clear();
-            LV.Clear();
+            LV.Items.Clear();
+        }
+
+        public void Clear()
+        {
+            files.Clear();
+            images.Clear();
+            Large.Images.Clear();
+            LV.Items.Clear();
         }
 
     }

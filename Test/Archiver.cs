@@ -139,6 +139,11 @@ namespace Test
             LV.Items.Clear();
         }
 
+        private void about_strip_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Программа упаковщик изображений, \rдля создания архива изображений формата CIA \r\r Автор - Головин Сергей", "О программе CIA Archiver",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
     public class MListView : ListView
     {

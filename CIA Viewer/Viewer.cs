@@ -312,5 +312,11 @@ namespace CIA_Viewer
                 view.Show();
             }
         }
+
+        private void about_strip_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "Программа для просмотра архива изображений\r формата CIA. \r\r Автор - Головин Сергей", "О программе CIA Viewer",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

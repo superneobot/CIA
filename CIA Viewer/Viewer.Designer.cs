@@ -114,6 +114,7 @@ namespace CIA_Viewer
             this.about_strip.Name = "about_strip";
             this.about_strip.Size = new System.Drawing.Size(180, 22);
             this.about_strip.Text = "О программе";
+            this.about_strip.Click += new System.EventHandler(this.about_strip_Click);
             // 
             // LV
             // 

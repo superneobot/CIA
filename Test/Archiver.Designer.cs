@@ -169,7 +169,7 @@
             this.очиститьToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.очиститьToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить";
             this.очиститьToolStripMenuItem.Click += new System.EventHandler(this.очиститьToolStripMenuItem_Click);
             // 
@@ -187,8 +187,9 @@
             this.about_strip.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.about_strip.ForeColor = System.Drawing.Color.Black;
             this.about_strip.Name = "about_strip";
-            this.about_strip.Size = new System.Drawing.Size(149, 22);
+            this.about_strip.Size = new System.Drawing.Size(180, 22);
             this.about_strip.Text = "О программе";
+            this.about_strip.Click += new System.EventHandler(this.about_strip_Click);
             // 
             // Archiver
             // 
